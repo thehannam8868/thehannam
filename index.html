@@ -157,11 +157,11 @@
                             <span>11:00~13:00</span>
                         </label>
                         <label class="time-label">
-                            <input type="checkbox" name="call_time" value="13:00~15:00">
+                            <input type="checkbox" name="call_time" value="14:00~16:00">
                             <span>14:00~16:00</span>
                         </label>
                         <label class="time-label">
-                            <input type="checkbox" name="call_time" value="15:00~17:00">
+                            <input type="checkbox" name="call_time" value="16:00~18:00">
                             <span>16:00~18:00</span>
                         </label>
                     </div>
@@ -192,11 +192,34 @@
 
 <script>
     document.getElementById('consultForm').addEventListener('submit', function(e) {
+        // 1. 개인정보 동의 체크 검증
         const agree = document.getElementById('agreeCheck').checked;
         if (!agree) {
             e.preventDefault();
             alert('개인정보 수집 및 이용에 동의하셔야 신청이 가능합니다.');
+            return;
         }
+
+        // 2. 통화요청시간 다중 선택 문자열로 결합 처리
+        const checkboxes = document.querySelectorAll('input[name="call_time"]:checked');
+        const selectedTimes = [];
+        
+        checkboxes.forEach(function(checkbox) {
+            selectedTimes.push(checkbox.value);
+        });
+
+        // 원본 체크박스 엘리먼트들의 name 속성을 제거하여 구글 시트로 개별 전송되는 것을 방지합니다.
+        document.querySelectorAll('input[name="call_time"]').forEach(function(cb) {
+            cb.removeAttribute('name');
+        });
+
+        // 콤마(,)로 연결된 하나의 결과 문자열을 hidden input으로 생성하여 form에 삽입합니다.
+        const hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('type', 'hidden');
+        hiddenInput.setAttribute('name', 'call_time');
+        hiddenInput.setAttribute('value', selectedTimes.join(', '));
+        
+        this.appendChild(hiddenInput);
     });
 </script>
 
