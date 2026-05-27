@@ -3,15 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>렌탈/할부 상담 신청 접수</title>
+    <title>철거 상담 신청 접수</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Malgun Gothic', dotum, sans-serif; }
-        body { background-color: #22741C; display: flex; justify-content: center; padding: 10px; }
+        body { background-color: #ffffff; display: flex; justify-content: center; padding: 10px; }
         .container { max-width: 500px; width: 100%; background: #fff; border: 1px solid #ddd; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
         
         /* 헤더 로고 영역 */
-        .header-logo { background-color: #0d233a; padding: 20px; text-align: center; color: #fff; font-size: 24px; font-weight: bold; }
-        .header-logo span { color: #f2b705; }
+        .header-logo {
+            background-color: #00361E;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        /* 로고 이미지 스타일 */
+        .header-logo img {
+            height: 2.0em; 
+            width: auto; 
+            margin-right: 12px;
+        }
+
+        /* 글자 스타일 */
+        .header-logo span {
+            color: #f2b705; 
+            font-size: 26px; 
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
         
         /* 타이틀 */
         .page-title { text-align: center; font-size: 16px; font-weight: bold; padding: 15px 0; color: #333; }
@@ -33,6 +56,30 @@
         /* 전화번호 분할 스타일 */
         .tel-group { display: flex; align-items: center; gap: 5px; }
         .tel-group input { text-align: center; }
+        
+        /* ★ 통화요청시간 체크박스 정렬 스타일 */
+        .time-checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 깔끔하게 2열로 정렬 */
+            gap: 8px 10px;
+            width: 100%;
+            padding: 4px 0;
+        }
+        .time-label {
+            display: flex;
+            align-items: center;
+            gap: 6px; /* 작은 네모와 글자 사이의 간격 */
+            font-size: 13px;
+            color: #333;
+            cursor: pointer;
+            user-select: none;
+        }
+        .time-label input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            accent-color: #f2b705; /* 체크 시 채워지는 포인트 컬러 (하단 스위치와 통일) */
+        }
         
         /* 개인정보 수집 안내 박스 */
         .privacy-box { margin: 15px; border: 1px solid #ddd; border-radius: 4px; padding: 12px; font-size: 11px; color: #666; line-height: 1.6; }
@@ -56,13 +103,14 @@
 
 <div class="container">
     <div class="header-logo">
-        <span>THE HANNAM</span>
+        <img src="logo3.jpg.jpg" alt="thehannam 로고">
+        <span> </span>
     </div>
     
     <div class="page-title">렌탈/할부 상담 신청 접수</div>
     <div class="section-title">접수정보</div>
     
-    <form id="consultForm" action="https://script.google.com/macros/s/AKfycbw05J6ZQnl3pLm3DK0h5Cv1qH8bCMxLp3sdBoxWM1gYEtJBKPwV51miszommmzyRUha/exec" method="POST">
+    <form id="consultForm" action="https://script.google.com/macros/s/AKfycbxUNCNuFpWBdsY3V7LAyQo2apXii-5XJGg7hcUWzw-s0_A5Ri1jWf1gAdsAlvP8llOP/exec" method="POST">
         <table class="form-table">
             <tr>
                 <th>고객구분<span class="required">*</span></th>
@@ -87,21 +135,37 @@
                     </div>
                 </td>
             </tr>
+            
             <tr>
-                <th>주소</th>
+                <th>주소<span class="required">*</span></th>
                 <td><input type="text" name="address" placeholder="시/도 시/군/구 동/리 및 상세주소 입력"></td>
             </tr>
             <tr>
                 <th>사업자명</th>
-                <td><input type="text" name="business_name"></td>
-            </tr>
-            <tr>
-                <th>추천인</th>
-                <td><input type="text" name="referrer"></td>
+                <td><input type="text" name="businessperson"></td>
             </tr>
             <tr>
                 <th>통화요청시간</th>
-                <td><input type="text" name="call_time" placeholder="예: 오후 2시 이후"></td>
+                <td>
+                    <div class="time-checkbox-group">
+                        <label class="time-label">
+                            <input type="checkbox" name="call_time" value="9:00~11:00">
+                            <span>9:00~11:00</span>
+                        </label>
+                        <label class="time-label">
+                            <input type="checkbox" name="call_time" value="11:00~13:00">
+                            <span>11:00~13:00</span>
+                        </label>
+                        <label class="time-label">
+                            <input type="checkbox" name="call_time" value="13:00~15:00">
+                            <span>14:00~16:00</span>
+                        </label>
+                        <label class="time-label">
+                            <input type="checkbox" name="call_time" value="15:00~17:00">
+                            <span>16:00~18:00</span>
+                        </label>
+                    </div>
+                </td>
             </tr>
         </table>
         
