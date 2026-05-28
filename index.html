@@ -9,7 +9,6 @@
         body { background-color: #ffffff; display: flex; justify-content: center; padding: 10px; }
         .container { max-width: 500px; width: 100%; background: #fff; border: 1px solid #ddd; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
         
-        /* 헤더 로고 영역 */
         .header-logo {
             background-color: #00361E;
             padding: 15px 20px;
@@ -20,73 +19,33 @@
             font-size: 24px;
             font-weight: bold;
         }
+        .header-logo img { height: 2.0em; width: auto; margin-right: 12px; }
+        .header-logo span { color: #f2b705; font-size: 26px; font-weight: bold; letter-spacing: 1px; }
         
-        /* 로고 이미지 스타일 */
-        .header-logo img {
-            height: 2.0em; 
-            width: auto; 
-            margin-right: 12px;
-        }
-
-        /* 글자 스타일 */
-        .header-logo span {
-            color: #f2b705; 
-            font-size: 26px; 
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        
-        /* 타이틀 */
         .page-title { text-align: center; font-size: 16px; font-weight: bold; padding: 15px 0; color: #333; }
         .section-title { background-color: #f2f2f2; text-align: center; font-size: 14px; font-weight: bold; padding: 8px 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; color: #444; }
         
-        /* 폼 테이블 스타일 */
         .form-table { width: 100%; border-collapse: collapse; }
         .form-table tr { border-bottom: 1px solid #e8e8e8; }
         .form-table th { width: 25%; background-color: #ededed; text-align: left; padding: 10px 8px; font-size: 12px; color: #555; font-weight: bold; vertical-align: middle; }
         .form-table td { padding: 6px 8px; vertical-align: middle; }
         
-        /* 필수 표시 */
         .required { color: #d9534f; margin-left: 2px; }
         
-        /* 입력창 스타일 */
         input[type="text"], select { width: 100%; height: 32px; border: 1px solid #ccc; padding: 0 8px; font-size: 13px; border-radius: 3px; color: #333; }
         input:focus, select:focus { border-color: #0d233a; outline: none; }
         
-        /* 전화번호 분할 스타일 */
         .tel-group { display: flex; align-items: center; gap: 5px; }
         .tel-group input { text-align: center; }
         
-        /* ★ 통화요청시간 체크박스 정렬 스타일 */
-        .time-checkbox-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* 깔끔하게 2열로 정렬 */
-            gap: 8px 10px;
-            width: 100%;
-            padding: 4px 0;
-        }
-        .time-label {
-            display: flex;
-            align-items: center;
-            gap: 6px; /* 작은 네모와 글자 사이의 간격 */
-            font-size: 13px;
-            color: #333;
-            cursor: pointer;
-            user-select: none;
-        }
-        .time-label input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
-            accent-color: #f2b705; /* 체크 시 채워지는 포인트 컬러 (하단 스위치와 통일) */
-        }
+        .time-checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; width: 100%; padding: 4px 0; }
+        .time-label { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #333; cursor: pointer; user-select: none; }
+        .time-label input[type="checkbox"] { width: 16px; height: 16px; cursor: pointer; accent-color: #f2b705; }
         
-        /* 개인정보 수집 안내 박스 */
         .privacy-box { margin: 15px; border: 1px solid #ddd; border-radius: 4px; padding: 12px; font-size: 11px; color: #666; line-height: 1.6; }
         .privacy-box h4 { font-size: 12px; color: #333; margin-bottom: 5px; }
         .privacy-box strong { color: #333; display: block; margin-top: 5px; }
         
-        /* 토글 스위치 영역 */
         .agree-wrapper { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 12px; color: #444; font-weight: bold; }
         .switch { position: relative; display: inline-block; width: 44px; height: 22px; }
         .switch input { opacity: 0; width: 0; height: 0; }
@@ -95,7 +54,6 @@
         input:checked + .slider { background-color: #f2b705; }
         input:checked + .slider:before { transform: translateX(22px); }
         
-        /* 제출 버튼 */
         .btn-submit { display: block; width: 40%; margin: 0 auto 30px; background-color: #f2b705; color: white; border: none; height: 40px; font-size: 14px; font-weight: bold; cursor: pointer; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
     </style>
 </head>
@@ -103,14 +61,14 @@
 
 <div class="container">
     <div class="header-logo">
-        <img src="logo3.jpg.jpg" alt="thehannam 로고">
+        <img src="logo3.jpg.jpg" alt="N-CORE 로고">
         <span> </span>
     </div>
     
-    <div class="page-title">렌탈/할부 상담 신청 접수</div>
+    <div class="page-title">철거 상담 신청 접수</div>
     <div class="section-title">접수정보</div>
     
-    <form id="consultForm" action="https://script.google.com/macros/s/AKfycbxUNCNuFpWBdsY3V7LAyQo2apXii-5XJGg7hcUWzw-s0_A5Ri1jWf1gAdsAlvP8llOP/exec" method="POST">
+    <form id="consultForm" action="여기에_새로_복사한_URL_주소_넣기" method="POST">
         <table class="form-table">
             <tr>
                 <th>고객구분<span class="required">*</span></th>
@@ -123,7 +81,7 @@
             </tr>
             <tr>
                 <th>고객명<span class="required">*</span></th>
-                <td><input type="text" name="customer_name" required></td>
+                <td><input type="text" name="customer_name" placeholder="고객 성함 입력" required></td>
             </tr>
             <tr>
                 <th>휴대전화<span class="required">*</span></th>
@@ -135,33 +93,36 @@
                     </div>
                 </td>
             </tr>
-            
-            <tr>
-                <th>주소<span class="required">*</span></th>
-                <td><input type="text" name="address" placeholder="시/도 시/군/구 동/리 및 상세주소 입력"></td>
-            </tr>
             <tr>
                 <th>사업자명</th>
-                <td><input type="text" name="businessperson"></td>
+                <td>
+                    <input type="text" name="business_name" placeholder="법인/사업자인 경우 회사명 입력">
+                </td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td>
+                    <input type="text" name="address" placeholder="시/도 시/군/구 동/리 및 상세주소 입력">
+                </td>
             </tr>
             <tr>
                 <th>통화요청시간</th>
                 <td>
                     <div class="time-checkbox-group">
                         <label class="time-label">
-                            <input type="checkbox" name="call_time" value="9:00~11:00">
+                            <input type="checkbox" class="time-chk" value="9:00~11:00">
                             <span>9:00~11:00</span>
                         </label>
                         <label class="time-label">
-                            <input type="checkbox" name="call_time" value="11:00~13:00">
+                            <input type="checkbox" class="time-chk" value="11:00~13:00">
                             <span>11:00~13:00</span>
                         </label>
                         <label class="time-label">
-                            <input type="checkbox" name="call_time" value="14:00~16:00">
+                            <input type="checkbox" class="time-chk" value="14:00~16:00">
                             <span>14:00~16:00</span>
                         </label>
                         <label class="time-label">
-                            <input type="checkbox" name="call_time" value="16:00~18:00">
+                            <input type="checkbox" class="time-chk" value="16:00~18:00">
                             <span>16:00~18:00</span>
                         </label>
                     </div>
@@ -169,11 +130,13 @@
             </tr>
         </table>
         
+        <input type="hidden" id="final_call_time" name="call_time">
+
         <div class="privacy-box">
             <h4>수집하는 개인정보의 항목</h4>
             회사는 상담, 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br>
             <strong>개인정보 수집항목</strong>
-            성명, 휴대전화, 주소<br>
+            성명, 휴대전화, 사업자명, 주소<br>
             <strong>개인정보 수집이용기간</strong>
             개인정보 수집일로부터 계약종료일까지
         </div>
@@ -192,7 +155,7 @@
 
 <script>
     document.getElementById('consultForm').addEventListener('submit', function(e) {
-        // 1. 개인정보 동의 체크 검증
+        // 1. 개인정보 동의 체크
         const agree = document.getElementById('agreeCheck').checked;
         if (!agree) {
             e.preventDefault();
@@ -200,26 +163,18 @@
             return;
         }
 
-        // 2. 통화요청시간 다중 선택 문자열로 결합 처리
-        const checkboxes = document.querySelectorAll('input[name="call_time"]:checked');
-        const selectedTimes = [];
+        // 2. 체크된 모든 시간박스 값을 찾아내어 쉼표(,)로 합쳐주는 작업
+        const checkboxes = document.querySelectorAll('.time-chk');
+        let selectedTimes = [];
         
         checkboxes.forEach(function(checkbox) {
-            selectedTimes.push(checkbox.value);
+            if (checkbox.checked) {
+                selectedTimes.push(checkbox.value);
+            }
         });
-
-        // 원본 체크박스 엘리먼트들의 name 속성을 제거하여 구글 시트로 개별 전송되는 것을 방지합니다.
-        document.querySelectorAll('input[name="call_time"]').forEach(function(cb) {
-            cb.removeAttribute('name');
-        });
-
-        // 콤마(,)로 연결된 하나의 결과 문자열을 hidden input으로 생성하여 form에 삽입합니다.
-        const hiddenInput = document.createElement('input');
-        hiddenInput.setAttribute('type', 'hidden');
-        hiddenInput.setAttribute('name', 'call_time');
-        hiddenInput.setAttribute('value', selectedTimes.join(', '));
         
-        this.appendChild(hiddenInput);
+        // 하나로 합쳐진 글자(예: "9:00~11:00, 14:00~16:00")를 hidden 태그에 주입하여 전송시킵니다.
+        document.getElementById('final_call_time').value = selectedTimes.join(', ');
     });
 </script>
 
