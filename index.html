@@ -35,6 +35,9 @@
         input[type="text"], select { width: 100%; height: 32px; border: 1px solid #ccc; padding: 0 8px; font-size: 13px; border-radius: 3px; color: #333; }
         input:focus, select:focus { border-color: #0d233a; outline: none; }
         
+        /* ★ 추가된 스타일: 수정 불가(readonly) 상태일 때 회색창으로 보이게 설정 */
+        input[readonly] { background-color: #e9ecef; color: #495057; cursor: not-allowed; border: 1px solid #ced4da; }
+
         .tel-group { display: flex; align-items: center; gap: 5px; }
         .tel-group input { text-align: center; }
         
@@ -102,7 +105,7 @@
             <tr>
                 <th>추천인ID</th>
                 <td>
-                    <input type="text" name="address" placeholder="">
+                    <input type="text" id="referrer_id" name="address" placeholder="QR 코드를 인식해주세요.">
                 </td>
             </tr>
             <tr>
@@ -154,6 +157,19 @@
 </div>
 
 <script>
+    // ★ 추가된 기능: 페이지가 로드될 때 주소창의 QR 파라미터(?id=사원ID)를 읽어와 처리하는 코드
+    window.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const agentId = urlParams.get('id'); // URL 뒤의 ?id=A0001 부분을 가져옵니다.
+        
+        if (agentId) {
+            const referrerInput = document.getElementById('referrer_id');
+            referrerInput.value = agentId;       // 사원 ID 자동 입력
+            referrerInput.readOnly = true;     // 수정 불가능하게 잠금 (CSS에 의해 회색으로 변함)
+        }
+    });
+
+    // 기존 동의 체크 및 시간 선택 소스코드 (원본 그대로 보존)
     document.getElementById('consultForm').addEventListener('submit', function(e) {
         // 1. 개인정보 동의 체크
         const agree = document.getElementById('agreeCheck').checked;
